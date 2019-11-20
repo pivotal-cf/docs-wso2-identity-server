@@ -1,5 +1,5 @@
 ---
-title: YOUR-PRODUCT-NAME (Beta)
+title: WSO2 Identity Server for PCF (Beta)
 owner: Partners
 ---
 
@@ -8,114 +8,123 @@ owner: Partners
 **If this product is in beta, keep and edit the warning note below.**
 <p class="note warning">
 <strong>Warning: </strong>
-The PRODUCT-NAME for Pivotal Platform tile is currently in beta and is intended for evaluation and test purposes only.
+The WSO2 Identity Server for Pivotal Platform tile is currently in beta and is intended for evaluation and test purposes only.
 Do not use this product in a Pivotal Platform production environment.
 </p>
 
-**This topic begins with a brief description of what the product tile (e.g. Apigee Edge Service Broker for Pivotal Platform) does,
-whereas the Overview section below describes what the service itself (e.g. Apigee Edge) does. See below for an example.**
-
-This documentation describes the Apigee Edge Service Broker for Pivotal Platform. The Apigee Edge Service
-Broker for Pivotal Platform enables developers to manage APIs for their Pivotal Platform apps through the Apigee Edge management console.
-
-**Note**: This description appears under **OVERVIEW** in the tile's listing on
-[Pivotal Network](http://network.pivotal.io).
+This documentation describes WSO2 Identity Server for Pivotal Cloud
+Foundry (PCF), which installs Identity Server service,
+[WSO2 Identity Server 5.7.0](https://wso2.com/identity-and-access-management/), on PCF.
 
 ## <a id='overview'></a>Overview
 
-**The overview describes the service that your product offers to Pivotal Platform developers.
-Make sure to overview the features of the integration.
-Don't focus only on the overview of your product that is being integrated.
-See below for an example.**
+WSO2 Identity Server is API-driven, is based on open standards with the Pivotal Cloud Foundry deployment option. It supports complex IAM requirements given its high extensibility.
 
-The Apigee Edge Service Broker for Pivotal Platform registers a service broker with Pivotal Platform and exposes its service plans on the
-Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command
-Line Interface (cf CLI) and bind them to their apps.
+WSO2 Identity Server helps you do single sign-on and identity federation backed by strong and adaptive authentication, securely expose APIs, and manage identities
+by connecting to heterogeneous user stores.
 
-Creating an Apigee Edge for Pivotal Platform service instance and binding it to an app creates an Apigee Edge API proxy that
-handles requests for the app. This lets developers use the Apigee Edge management console to manage API request
-handling between clients and the app.
+The Deployment Architecture for the Identity Server is as follows:
 
-**Note**: This overview appears under **OVERVIEW**, combined with the description above in the tile's listing on
-[Pivotal Network](http://network.pivotal.io).
+![Deployment](images/deployment.png)
 
-## <a id='features'></a>Key Features
+## <a id='features'></a>Key Capabilities
 
-**Note**: This feature list appears under **FEATURES** in the tile's listing on
-[Pivotal Network](http://network.pivotal.io).
-Make sure you list the key features of the tile (the integration).
-We cannot accept a list of the key features of your product that we are integrating.
+The key capabilities of WSO2 Identity Server for Pivotal Platform are described in this section.
 
-YOUR-PRODUCT-NAME includes the following key features:
+* Identity Federation and SSO
 
-* Feature one
-* Feature two
-* Feature three
+Enables federated access to web and mobile applications across multiple trust domains using open identity standards (OAuth, SAML, OIDC, WS- Federation) and facilitates SSO between multiple logged in applications.
 
+* Identity Bridging
 
+Facilitates exchanging identity attributes and authentication decisions between heterogeneous identity systems in a seamless manner.
+
+* Adaptive and Strong Authentication
+
+Enable applications to secure access with multi-factor authentication based on context, risk, and identity attributes.
+Learn more about [Adaptive authentication](https://wso2.com/identity-and-access-management/adaptive-authentication/).
+
+* API and Microservices Security
+
+Secure access to APIs and Microservices based on open standards.
+Read more: [Building an Ecosystem for API Security](https://wso2.com/whitepapers/wso2-whitepaper-building-an-ecosystem-for-api-security/)
+
+* Account Management and Identity Provisioning
+
+Allows identity administrators to manage users and groups with automated provisioning and approval workflows across heterogeneous user stores.
+
+* Access Control
+
+Controls access to applications in the login flow with fine-grained access control policies and acts as a policy decision point (PDP) for third-party applications.
+
+* Privacy
+
+Adheres to privacy by design and privacy by default principle by following industry standards and regulations with consent lifecycle management, data security, and enabling users have control over their personal data.
+[Learn more about GDPR](https://wso2.com/solutions/regulatory-compliance/gdpr/).
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about PRODUCT-NAME.
+The following table provides version and version-support information about WSO2 Identity Server.
 
 <table class="nice">
     <th>Element</th>
     <th>Details</th>
     <tr>
         <td>Tile version</td>
-        <td>vYOUR-VERSION-NUMBER</td>
+        <td>5.7.0-6.1574079675330</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>YOUR-RELEASE-DATE (Ex: July 1, 2019)</td>
+        <td>November 19, 2019</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>YOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</td>
+        <td>5.7.0</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>YOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
-    </tr>
-    <tr>
-        <td>Compatible Pivotal Application Service version(s)</td>
-        <td>YOUR-COMPATIBLE-PIVOTAL-APPLICATION-SERVICE-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
-    </tr>
-        <tr>
-        <td>Compatible Pivotal Application Service for Windows version(s)</td>
-        <td>YOUR-COMPATIBLE-PIVOTAL-APPLICATION-SERVICE-VERSION (Ex. 2.5, 2.6, and 2.7)</td>
+        <td>2.5.x, 2.6.x</td>
     </tr>
     <tr>
        <td>BOSH stemcell version</td>
-       <td>Ubuntu Xenial</td>
+       <td>Ubuntu Xenial 170.162</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>AWS?, Azure?, GCP?, OpenStack?, and vSphere?</td>
+        <td>AWS, GCP, vSphere</td>
     </tr>
 </table>
 
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here.
-A general requirement might be something like, "An AppDynamics account."
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+WSO2 Identity Server has the following requirements:
 
-YOUR-PRODUCT-NAME has the following requirements:
+* SQL Database databases (MySQL or MS SQL) for storing data
+    * Database for storing User Management and Registry data
+        * For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mysql.sql)
+        * For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mysql5.7.sql)
+        * For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mssql.sql)
+    * Database for storing Identity and Consent data
+        * For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mysql.sql)
+        * For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mysql-5.7.sql)
+        * For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mssql.sql)
+    * Database for storing Business Process data
+        * For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mysql.sql)
+        * For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mysql.sql)
+        * For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mssql.sql)
 
-+ PREREQUISITE-1
-
-+ PREREQUISITE-2
-
-## <a id="limitations"></a>Limitations
-
-**List any known limitations.**
+For more information, see [Installing and Configuring the Databases](https://docs.wso2.com/display/AM260/Installing+and+Configuring+the+Databases) in the WSO2 documentation.
 
 ## <a id="feedback"></a>Feedback
 
-If you have a feature request, questions, or information about an issue, send an email to YOUR-SUPPORT-EMAIL.
+If you have a feature request, questions, or information about an issue email
+[WSO2](mailto:dev@wso2.org).
 
 ## <a id='license'></a>License
 
-**List any license information here.**
+This tile contains the WSO2 products with its latest updates, which are under the End User License Agreement (EULA) 2.1.
+Read more about [EULA 2.1](https://wso2.com/licenses/wso2-update/2.1).
+
+You need a valid license key that corresponds to your WSO2 Subscription to install this tile. If you do not possess a valid license key,
+contact a [WSO2 account manager](https://wso2.com/contact/).

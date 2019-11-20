@@ -1,60 +1,51 @@
 ---
-title: Release Notes for YOUR-PRODUCT-NAME
+title: Release Notes for WSO2 Identity Server
 owner: Partners
 ---
 
 <strong><%= modified_date %></strong>
 
-**This topic should include the Release Notes for your product. For examples, see the 
-[GCP Service Broker Release Notes](http://docs.pivotal.io/gcp-sb/release-notes.html) or the 
-[ISS Knowtify Search Analytics Release Notes](http://docs.pivotal.io/knowtify/release.html).
-When you release a new version, add new release notes to this file, keeping the older notes below.**
+These are release notes for WSO2 Identity Server.
 
-These are release notes for YOUR-PRODUCT-NAME.
+##<a id="ver"></a> 5.7.0-6.1574079675330
 
-##<a id="ver"></a> vCURRENT-VERSION-NUMBER (Ex. v1.0.1)
-
-**Release Date:** RELEASE-DATE (Ex. October 1, 2017)
+**Release Date:** November 19, 2019
 
 Features included in this release:
 
-* Feature one.
-* Feature two.
-* Feature three.
+* **Adaptive Authentication**
+
+    Adaptive authentication is a secure and flexible form of authentication where you need to validate multiple factors to determine the authenticity of a login attempt, before you grant access to a resource. Following evaluation criteria should be met to perform adaptive authentication,
+
+      * User attributes
+      * User behavior
+      * Level of assurance with regard to the access request
+      * Risk analysis statistics
+      * Machine learning algorithms
+
+* **User Managed Access(UMA) 2.0**
+
+    UMA is an protocol written using OAuth2 protocol, to provide the resource owner to control the authorization of data sharing and other protected-resource access made between online services on the owner’s behalf, or with the owner’s authorization by an autonomous requesting party. WSO2 Identity Server currently supports basic level UMA features which users can control through provided APIs.
+
+* **Integration with Office 365**
+
+    With this feature, WSO2 Identity Server acts as the Identity Provider and handles user synchronization with Microsoft cloud. Role based on-demand user synchronization and the group based license management are the two special features of WSO2 IS solution. It also provides heterogeneous user store support, multi-factor authentication and SSO/SLO with other enterprise and community application.
 
 Fixed issues in this release:
 
-* Fixed issue one.
-* Fixed issue two.
-* Fixed issue three.
-
-**When you have fixed issue, you should have a corresponding known issue in the release below.**
-
-Known issues in this release:
-
-* Issue one.
-* Issue two.
-* Issue three.
-
-
-##<a id="ver"></a> vPREVIOUS-VERSION-NUMBER (Ex. v1.0.0)
-
-**Release Date:** RELEASE-DATE (Ex. August 1, 2017)
-
-Features included in this release:
-
-* Feature one.
-* Feature two.
-* Feature three.
-
-Fixed issues in this release:
-
-* Fixed issue one.
-* Fixed issue two.
-* Fixed issue three.
+* [5.7.0-RC2 Fixes](https://github.com/wso2/product-is/milestone/58?closed=1)
+* [5.7.0-RC1 Fixes](https://github.com/wso2/product-is/milestone/52?closed=1)
+* [5.7.0-Beta2 Fixes](https://github.com/wso2/product-is/milestone/57?closed=1)
+* [5.7.0-Beta Fixes](https://github.com/wso2/product-is/milestone/54?closed=1)
+* [5.7.0-Alpha3 Fixes](https://github.com/wso2/product-is/milestone/53?closed=1)
+* [5.7.0-Alpha2 Fixes](https://github.com/wso2/product-is/milestone/51?closed=1)
+* [5.7.0-Alpha Fixes](https://github.com/wso2/product-is/milestone/50?closed=1)
+* [5.7.0-M5 Fixes](https://github.com/wso2/product-is/milestone/49?closed=1)
+* [5.7.0-M4 Fixes](https://github.com/wso2/product-is/milestone/48?closed=1)
+* [5.7.0-M3 Fixes](https://github.com/wso2/product-is/milestone/47?closed=1)
+* [5.7.0-M2 Fixes](https://github.com/wso2/product-is/milestone/46?closed=1)
+* [5.7.0-M1 Fixes](https://github.com/wso2/product-is/milestone/45?closed=1)
 
 Known issues in this release:
 
-* Issue one.
-* Issue two.
-* Issue three.
+* [WSO2 Identity Server for Pivotal Platform 5.7.0 - Known Issues in the product-is GitHub repository](https://github.com/wso2/product-is/issues?q=is%3Aopen+is%3Aissue+label%3AAffected%2F5.7.0).
