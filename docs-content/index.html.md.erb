@@ -1,26 +1,24 @@
 ---
-title: WSO2 Identity Server for PCF (Beta)
+title: WSO2 Identity Server for Pivotal Platform (Beta)
 owner: Partners
 ---
 
 <strong><%= modified_date %></strong>
 
-**If this product is in beta, keep and edit the warning note below.**
 <p class="note warning">
 <strong>Warning: </strong>
 The WSO2 Identity Server for Pivotal Platform tile is currently in beta and is intended for evaluation and test purposes only.
 Do not use this product in a Pivotal Platform production environment.
 </p>
 
-This documentation describes WSO2 Identity Server for Pivotal Cloud
-Foundry (PCF), which installs Identity Server service,
-[WSO2 Identity Server 5.7.0](https://wso2.com/identity-and-access-management/), on PCF.
+This documentation describes WSO2 Identity Server for Pivotal Platform, which installs Identity Server service,
+[WSO2 Identity Server 5.7.0](https://wso2.com/identity-and-access-management/), on Platform.
 
 ## <a id='overview'></a>Overview
 
-WSO2 Identity Server is API-driven, is based on open standards with the Pivotal Cloud Foundry deployment option. It supports complex IAM requirements given its high extensibility.
+WSO2 Identity Server is API-driven, is based on open standards with the Pivotal Platform deployment option. It supports complex IAM requirements given its high extensibility.
 
-WSO2 Identity Server helps you do single sign-on and identity federation backed by strong and adaptive authentication, securely expose APIs, and manage identities
+WSO2 Identity Server helps you do single sign-on and identity federation backed by strong and adaptive authentication, securely expose APIs, and identity management
 by connecting to heterogeneous user stores.
 
 The Deployment Architecture for the Identity Server is as follows:
@@ -31,33 +29,33 @@ The Deployment Architecture for the Identity Server is as follows:
 
 The key capabilities of WSO2 Identity Server for Pivotal Platform are described in this section.
 
-* Identity Federation and SSO
+### Identity Federation and SSO
 
 Enables federated access to web and mobile applications across multiple trust domains using open identity standards (OAuth, SAML, OIDC, WS- Federation) and facilitates SSO between multiple logged in applications.
 
-* Identity Bridging
+### Identity Bridging
 
 Facilitates exchanging identity attributes and authentication decisions between heterogeneous identity systems in a seamless manner.
 
-* Adaptive and Strong Authentication
+### Adaptive and Strong Authentication
 
 Enable applications to secure access with multi-factor authentication based on context, risk, and identity attributes.
 Learn more about [Adaptive authentication](https://wso2.com/identity-and-access-management/adaptive-authentication/).
 
-* API and Microservices Security
+### API and Microservices Security
 
 Secure access to APIs and Microservices based on open standards.
 Read more: [Building an Ecosystem for API Security](https://wso2.com/whitepapers/wso2-whitepaper-building-an-ecosystem-for-api-security/)
 
-* Account Management and Identity Provisioning
+### Account Management and Identity Provisioning
 
 Allows identity administrators to manage users and groups with automated provisioning and approval workflows across heterogeneous user stores.
 
-* Access Control
+### Access Control
 
 Controls access to applications in the login flow with fine-grained access control policies and acts as a policy decision point (PDP) for third-party applications.
 
-* Privacy
+### Privacy
 
 Adheres to privacy by design and privacy by default principle by following industry standards and regulations with consent lifecycle management, data security, and enabling users have control over their personal data.
 [Learn more about GDPR](https://wso2.com/solutions/regulatory-compliance/gdpr/).
@@ -100,19 +98,21 @@ The following table provides version and version-support information about WSO2 
 
 WSO2 Identity Server has the following requirements:
 
-* SQL Database databases (MySQL or MS SQL) for storing data
-    * Database for storing User Management and Registry data
-        * For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mysql.sql)
-        * For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mysql5.7.sql)
-        * For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mssql.sql)
-    * Database for storing Identity and Consent data
-        * For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mysql.sql)
-        * For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mysql-5.7.sql)
-        * For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mssql.sql)
-    * Database for storing Business Process data
-        * For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mysql.sql)
-        * For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mysql.sql)
-        * For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mssql.sql)
+### SQL Database databases (MySQL or MS SQL) for storing data
+#### Database for storing User Management and Registry data
+- For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mysql.sql)
+- For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mysql5.7.sql)
+- For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/usermgt/mssql.sql)
+  
+#### Database for storing Identity and Consent data
+- For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mysql.sql)
+- For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mysql-5.7.sql)
+- For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/identity/mssql.sql)
+
+#### Database for storing Business Process data
+- For MySQL(before v5.7) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mysql.sql)
+- For MySQL(v5.7 or later) use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mysql.sql)
+- For MSSQL use [script](https://github.com/wso2/pivotal-cf-is/blob/master/pattern-1/bosh-release/dbscripts/bps/mssql.sql)
 
 For more information, see [Installing and Configuring the Databases](https://docs.wso2.com/display/AM260/Installing+and+Configuring+the+Databases) in the WSO2 documentation.
 

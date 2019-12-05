@@ -1,0 +1,20 @@
+---
+:archive_menu:
+  ".": 
+:production_host: hello
+:subnav_templates:
+  wso2-identity-server: wso2-identity-server_subnav
+:template_variables: 
+:local_repo_dir: "/Users/andrewcovarrubias/Documents/workspace/partner_docs/docs-wso2-identity-server"
+:workspace: !ruby/object:Pathname
+  path: "/Users/andrewcovarrubias/Documents/workspace/partner_docs/docs-wso2-identity-server/docs-book/output/master_middleman/source"
+:feedback_enabled: 
+:repo_link_enabled: true
+:repo_links:
+  wso2-identity-server:
+    repo: docs-content
+    ref: master
+    at_path: 
+:product_info:
+  wso2-identity-server: {}
+:elastic_search: false
