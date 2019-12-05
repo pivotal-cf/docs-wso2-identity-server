@@ -1,31 +1,46 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using WSO2 Identity Server for Pivotal Platform
 owner: Partners
 ---
 
 <strong><%= modified_date %></strong>
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how to use WSO2 Identity Server.
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+##<a id='using'></a> Using WSO2 Identity Server
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile.
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.**
+###<a id='view_status'></a> View Status
 
-Other topics that you should address in your documentation:
+In Ops Manager, select the WSO2 Identity Server for Pivotal Platform tile, then select the **Status**
+tab to see the status of all WSO2 Identity Server nodes. In this tab, you can see
+information such as CPU usage, memory usage, and other information.
 
-+ **Troubleshooting**---If you include a Troubleshooting section, follow the Symptom/Explanation format used in the
-  [Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic.
+![Status](images/status.png)
 
-+ **Disaster recovery**--How do you recover data from the tile after a disaster? How do you perform backups?
+###<a id='access-dashboards'></a> Access Dashboards
 
-+ **Scalability**--How do you scale up the tile? How do you know when you need to scale up?
+After the installation is complete, the management console, and dashboard can be accessed
+via the following URLs where domain_name refers to the domain name of the Pivotal Platform environment.
 
-+ **Monitoring**--How do you monitor the tile? Does the tile send events to the Loggregator Firehose?
+* `https://wso2is.<system_domain_name>/carbon/`
 
-+ **Auditing**--Can Pivotal Platform operators use the standard Accounting and Usage reports?
+  The management console is an administrative portal that allows identity admin users to configure and work with WSO2 Identity Server capabilities.
 
-+ **Security**--How is this tile secured? How is the data secured?
+* `https://wso2is.<system_domain_name>/dashboard/`
 
-You can create separate pages for each of these topics or group them in one page about administering or maintaining the tile.
+  The WSO2 IS dashboard allows end users to manage the user profile or the user account, add security questions, revoke/update the password, manage user profile, and view identity providers. This is also known as account self-service.
 
+###<a id='access-logs'></a> Access Logs
+
+To access log files for WSO2 Identity Server for Pivotal Platform components,
+
+1. Select the WSO2 Identity Server for Pivotal Platform tile in Ops Manager.
+1. Open the **Status** tab.
+1. Request a download of the log file by selecting the download icon in the **LOGS** column.
+![Log-download](images/status.png)
+
+1. Go to the **Logs** tab to download the log file locally.
+![Log-main](images/log-main.png)
+
+###<a id='documentation'></a> Documentation
+WSO2 Identity Server for Pivotal Platform 5.7.0 [Documentation](https://docs.wso2.com/display/IS570).

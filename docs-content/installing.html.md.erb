@@ -1,34 +1,126 @@
 ---
-title: Installing and Configuring YOUR-PRODUCT-NAME
+title: Installing and Configuring WSO2 Identity Server
 owner: Partners
 ---
 
 <strong><%= modified_date %></strong>
 
-This topic describes how to install and configure YOUR-PRODUCT-NAME.
+This topic describes how to install and configure WSO2 Identity Server.
 
-##<a id='install'></a> Install and Configure YOUR-PRODUCT-NAME
+##<a id='install'></a> Configure trusted CA certificates for GoRouter
+To configure trusted CA certificates for GoRouter, do the following:
 
-To install the YOUR-PRODUCT-NAME file on the Ops Manager Installation Dashboard, do the following:
+1. In Ops Manager, select the PAS tile.
+1. Go to the **Networking** pane in the **Settings** tab.
+1. Append the following to the **Certificate Authorities Trusted by Router and HAProxy**.
+
+    ```
+    -----BEGIN CERTIFICATE-----
+    MIIDSTCCAjGgAwIBAgIEAoLQ/TANBgkqhkiG9w0BAQsFADBVMQswCQYDVQQGEwJV
+    UzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxDTALBgNVBAoT
+    BFdTTzIxEjAQBgNVBAMTCWxvY2FsaG9zdDAeFw0xNzA3MTkwNjUyNTFaFw0yNzA3
+    MTcwNjUyNTFaMFUxCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMN
+    TW91bnRhaW4gVmlldzENMAsGA1UEChMEV1NPMjESMBAGA1UEAxMJbG9jYWxob3N0
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAluZFdW1ynitztkWLC6xK
+    egbRWxky+5P0p4ShYEOkHs30QI2VCuR6Qo4Bz5rTgLBrky03W1GAVrZxuvKRGj9V
+    9+PmjdGtau4CTXu9pLLcqnruaczoSdvBYA3lS9a7zgFU0+s6kMl2EhB+rk7gXluE
+    ep7lIOenzfl2f6IoTKa2fVgVd3YKiSGsyL4tztS70vmmX121qm0sTJdKWP4HxXyq
+    K9neolXI9fYyHOYILVNZ69z/73OOVhkh/mvTmWZLM7GM6sApmyLX6OXUp8z0pkY+
+    vT/9+zRxxQs7GurC4/C1nK3rI/0ySUgGEafO1atNjYmlFN+M3tZX6nEcA6g94Iav
+    yQIDAQABoyEwHzAdBgNVHQ4EFgQUtS8kIYxQ8UVvVrZSdgyide9OHxUwDQYJKoZI
+    hvcNAQELBQADggEBABfk5mqsVUrpFCYTZZhOxTRRpGXqoW1G05bOxHxs42Paxw8r
+    AJ06Pty9jqM1CgRPpqvZa2lPQBQqZrHkdDE06q4NG0DqMH8NT+tNkXBe9YTre3EJ
+    CSfsvswtLVDZ7GDvTHKojJjQvdVCzRj6XH5Truwefb4BJz9APtnlyJIvjHk1hdoz
+    qyOniVZd0QOxLAbcdt946chNdQvCm6aUOputp8Xogr0KBnEy3U8es2cAfNZaEkPU
+    8Va5bU6Xjny8zGQnXCXxPKp7sMpgO93nPBt/liX1qfyXM7xEotWoxmm6HZx8oWQ8
+    U5aiXjZ5RKDWCCq4ZuXl6wVsUz1iE61suO5yWi8=
+    -----END CERTIFICATE-----
+     ```
+1. Click **Save**.
+
+1. Return to the Ops Manager Installation Dashboard and click **Apply changes** to apply the changes
+to the PAS tile.
+
+##<a id='install'></a> Install and Configure WSO2 Identity Server
+
+To install the WSO2 Identity Server for Pivotal Platform file on the Ops Manager Installation Dashboard,
+do the following:
 
 1. Download the product file from Pivotal Network.
 
-1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
+1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the
+product file.
 
-1. Under **Import a Product**, click **+** next to the version number of YOUR-PRODUCT-NAME.
+1. Under the **Import a Product** button, click **+** next to the version number of WSO2 Identity Server for Pivotal Platform.
 This adds the tile to your staging area.
 
-1. Click the newly added **YOUR-PRODUCT-NAME** tile.
+1. Click the newly added **WSO2 Identity Server for Pivotal Platform** tile.
 
-1. **This portion of the procedure should tell the users how to configure the newly added tile by
-walking them through the sections. Which fields should they fill out? What are the different
-checkboxes? Include relevant screenshots here.**
+1. AZ and Network Assignments Page:
+
+    ![Zones](images/zone.png)
+    2. Place singleton jobs in: Select the AZ in which the Identity Server VM needs to run.
+    2. Balance other jobs in: Select any combination of AZs.
+    2. Network: Select pcf-pas-network
+
+1. Database configurations page:
+
+    <br/>
+    Applicable Databases: User Management and registry Database, Identity Management Database, and Business Process database
+
+    <table>
+         <tr>
+             <th>Database Type</th>
+             <th>JDBC URL</th>
+             <th>Driver Class Name</th>
+             <th>Validation Query</th>
+             <th>Username </th>
+             <th>Password</th>
+         </tr>
+
+         <tr>
+            <td>MySQL</td>
+            <td><code>jdbc:mysql://&lt;hostname&gt;:&lt;port&gt;/&lt;db_name&gt;?autoReconnect=true&amp;amp;useSSL=false</code></td>
+            <td><code>com.mysql.jdbc.Driver</code></td>
+            <td rowspan="2"><code>SELECT 1</code></td>
+            <td rowspan="2">Username for database</td>
+            <td rowspan="2">Password for database</td>
+         </tr>
+
+         <tr>
+          <td>MS SQL</td>
+          <td><code>jdbc:sqlserver://&lt;hostname&gt;:&lt;port&gt;;databaseName=&lt;db_name&gt;;</code></td>
+          <td><code>com.microsoft.sqlserver.jdbc.SQLServerDriver</code></td>
+         </tr>
+    </table>
+    <br/>
+
+1. Consent Management Configurations page:
+
+    ![ConsentManagement](images/cosentmanagement.png)
+
+    If custom consent configurations are **not required**, click on **Use default PII Controller configurations**.
+    If custom consent configurations are required, click on **Customize PII Controller configurations** and fill out the values appropriately following the documentation below.
+
+
+    2. [Consent Management](https://docs.wso2.com/display/IS570/Consent+Management)
+    2. [Using the Consent Management REST API](https://docs.wso2.com/display/IS570/Using+the+Consent+Management+REST+APIs)
+
+
+1. Trusted CA certificate page:
+   ![Cert](images/cert.png)
+   Add the content of the Trusted CA certificate used to configure the Ops Manager.
+
+1. License key page:
+   ![License-key](images/license-key.png)
+   Add the WSO2 license key corresponding to your WSO2 subscription. If you don’t have a license key,
+   please contact a [WSO2 account manager](https://wso2.com/contact/).
+
+1. Admin Credentials page
+   ![Admin](images/admin.png)
+   Add the admin username and a strong password here.
 
 1. Click **Save**.
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply changes** to install YOUR-PRODUCT-NAME tile.
-
-**If needed, include additional configuration information below. For example, maybe there are
-configuration options not required for installation but which could be useful for certain users. Typical topics include:**
-1. **Self-service**--Do you have recommendations on how to configure/design plans in the tile so that users can choose the best options for themselves?
-1. **High availability**--How do you configure/deploy X Service tile to be highly available?
+1. Return to the Ops Manager Installation Dashboard and click **Apply changes** to install WSO2 API
+Manager for Pivotal Platform.
