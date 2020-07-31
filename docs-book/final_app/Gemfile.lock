@@ -16,7 +16,7 @@ GEM
     multi_json (1.11.2)
     multipart-post (2.0.0)
     puma (3.3.0)
-    rack (1.5.2)
+    rack (2.1.4)
     rack-rewrite (1.5.0)
     ref (1.0.5)
     sendgrid-ruby (1.1.5)
